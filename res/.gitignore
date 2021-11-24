@@ -1,0 +1,7 @@
+/.project
+
+/vendor/
+/.idea/
+/formation/
+/qualification/
+/.htpasswd
