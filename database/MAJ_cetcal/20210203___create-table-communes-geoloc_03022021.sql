@@ -1,8 +1,0 @@
-use cetcal;
-CREATE TABLE cetcal_communes (
-	id INT NOT NULL AUTO_INCREMENT,
-	libelle VARCHAR(256) NOT NULL,
-	lat VARCHAR(32) DEFAULT NULL,
-    lng VARCHAR(32) DEFAULT NULL,
-	PRIMARY KEY (id)
-);
