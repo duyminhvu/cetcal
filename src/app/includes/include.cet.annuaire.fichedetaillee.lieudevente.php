@@ -46,7 +46,7 @@ $data = $datas[0];
                 <div class="row">
                     <div class="col-12 d-flex justify-content-center p-0">
                         <div class="card__producteur d-flex justify-content-center align-items-center">
-                            <h2 class="text-center"><?= $data->denomination ?></h2>
+                            <h2 class="text-center"><?=(isset($data)) ? $data->denomination : "" ?></h2>
                         </div>
                         <div class="card__producteur">
                             <div id="fichedetailleeprd-carousel" class="carousel slide" data-ride="carousel">
@@ -61,9 +61,7 @@ $data = $datas[0];
                     <div class="col-12 d-flex align-items-center justify-content-center p-0">
                         <!--texte-->
                         <div class="d-flex align-items-center text__presentation">
-                            <p class="text-center">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab assumenda atque autem distinctio ea error, et eum fugit hic illo ipsam odio, provident quod rem repellat repellendus totam voluptates. Iste!
-                            </p>
+
                         </div>
                     </div>
                 </div>
@@ -77,21 +75,21 @@ $data = $datas[0];
                                 <h3>Coordonnées</h3>
                                 <p></p>
                                 <address>
-                                    <p><?=$data->denomination?></p>
-                                    <p><?=$data->adresse?></p>
-                                    <?=(strlen($data->tels) > 0) ?  "<p>".$data->tels . "</p>" : " " ?>
-                                    <?= (strlen($data->email) > 0) ? "<p class='card_mail'>".$data->email . "</p>" : "" ?>
+                                    <p><?=(isset($data)) ? $data->denomination :""?></p>
+                                    <p><?=(isset($data)) ? $data->adresse : ""?></p>
+                                    <?=(isset($data) && strlen($data->tels) > 0) ?  "<p>".$data->tels . "</p>" : " " ?>
+                                    <?= (isset($data) && strlen($data->email) > 0) ? "<p class='card_mail'>".$data->email . "</p>" : "" ?>
                                 </address>
                                 <div>
-                                    <?=  (strlen($data->urlwww) > 0)  ?  "<a class='cst-pills' href=".$data->urlwww.">"."site web" . "</a>" : "" ?>
+                                    <?=  (isset($data) && strlen($data->urlwww) > 0)  ?  "<a class='cst-pills' href=".$data->urlwww.">"."site web" . "</a>" : "" ?>
                                 </div>
                             </div>
                             <div class="col-6 card__horaires">
                                 <!--Jour/horaires-->
                                 <h3>Jours / Horaires</h3>
                                 <div>
-                                    <?= (strlen($data->infoscmd) > 0) ? "<p class=''>".$data->infoscmd . "</p>" : "" ?>
-                                    <?= (strlen($data->jourhoraire) > 0) ? "<p class=''>".$data->jourhoraire . "</p>" : "" ?>
+                                    <?= (isset($data) && strlen($data->infoscmd) > 0) ? "<p class=''>".$data->infoscmd . "</p>" : "" ?>
+                                    <?= (isset($data) && strlen($data->jourhoraire) > 0) ? "<p class=''>".$data->jourhoraire . "</p>" : "" ?>
                                 </div>
                             </div>
                         </div>
